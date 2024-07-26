@@ -1,0 +1,14 @@
+ul{
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    font-size: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: yellow;
+}
+
+ul li:hover{
+    cursor: pointer;
+    color: orange;
+}
