@@ -1,4 +1,4 @@
-<form class="box">
+<!-- <form class="box">
     <div class="mb-3">
       <label for="exampleInputEmail1" class="form-label">Email address</label>
       <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
@@ -13,4 +13,40 @@
       <label class="form-check-label" for="exampleCheck1">Check me out</label>
     </div>
     <button type="submit" class="btn btn-primary" (click)="GoToLogin()">Login</button>
-</form>
+</form> -->
+
+<!-- app.component.html -->
+<div class="grand">
+  <div class="parent container">
+     <form #LoginForm="ngForm" (ngSubmit)="onSubmit(LoginForm)">
+      <div class="mb-3">
+        <label for="exampleInputEmail" class="form-label">Email Address</label>
+        <input
+          type="email"
+          class="form-control"
+          id="exampleInputEmail"
+          aria-describedby="emailHelp"
+          name="email"
+          for storing as key value pairs or in JSON format
+          ngModel
+          required
+        >
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword" class="form-label">Password</label>
+        <input
+          type="password"
+          class="form-control"
+          id="exampleInputPassword"
+          aria-describedby="emailHelp"
+          name="password"
+          ngModel
+          required
+          maxlength="10"
+          minlength="6"
+        >
+      </div>
+      <button [disabled]="LoginForm.invalid" type="submit" class="btn btn-primary">Login</button>
+     </form>
+  </div>
+</div>
