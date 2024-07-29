@@ -1,0 +1,90 @@
+/* General form styling */
+.signup-form {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+  }
+  
+  /* Form group styling */
+  .form-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Label styling */
+  label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+  }
+  
+  /* Input field styling */
+  input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  input:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
+  }
+  
+  /* Styling for invalid input */
+  input.ng-invalid.ng-touched {
+    border-color: #dc3545;
+  }
+  
+  /* Password criteria styling */
+  .password-criteria {
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+  }
+  
+  .password-criteria p {
+    margin: 0;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Valid and invalid criteria styling */
+  .password-criteria .valid {
+    color: green;
+  }
+  
+  .password-criteria .invalid {
+    color: red;
+  }
+  
+  /* Icon styling */
+  .password-criteria .icon {
+    margin-right: 5px;
+  }
+  
+  /* Submit button styling */
+  button[type="submit"] {
+    padding: 10px 15px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  button[type="submit"]:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  

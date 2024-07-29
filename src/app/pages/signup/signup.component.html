@@ -1,0 +1,53 @@
+<div class="signup-form">
+    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" formControlName="name" />
+      </div>
+  
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" formControlName="email" />
+      </div>
+  
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" formControlName="password" (input)="validatePassword()" (blur)="markTouched()" />
+      </div>
+  
+      <div *ngIf="passwordFieldTouched" class="password-criteria">
+        <p>
+          <span class="icon" ngClass="{'valid': passwordCriteria.minLength, 'invalid': !passwordCriteria.minLength}">
+            {{ passwordCriteria.minLength ? '✔️' : '❌' }}
+          </span>
+          10-20 characters
+        </p>
+        <p>
+          <span class="icon" ngClass="{'valid': passwordCriteria.uppercase, 'invalid': !passwordCriteria.uppercase}">
+            {{ passwordCriteria.uppercase ? '✔️' : '❌' }}
+          </span>
+          At least one capital letter
+        </p>
+        <p>
+          <span class="icon" ngClass="{'valid': passwordCriteria.number, 'invalid': !passwordCriteria.number}">
+            {{ passwordCriteria.number ? '✔️' : '❌' }}
+          </span>
+          At least one number
+        </p>
+        <p>
+          <span class="icon" ngClass="{'valid': passwordCriteria.specialChar, 'invalid': !passwordCriteria.specialChar}">
+            {{ passwordCriteria.specialChar ? '✔️' : '❌' }}
+          </span>
+          At least one special character
+        </p>
+        <p>
+          <span class="icon" ngClass="{'valid': passwordCriteria.noSpaces, 'invalid': !passwordCriteria.noSpaces}">
+            {{ passwordCriteria.noSpaces ? '✔️' : '❌' }}
+          </span>
+          No spaces
+        </p>
+      </div>
+  
+      <button type="submit" [disabled]="signupForm.invalid">Sign Up</button>
+    </form>
+  </div>

@@ -1,5 +1,10 @@
 <app-navbar></app-navbar>
 
-<!-- <router-outlet></router-outlet> -->
+<router-outlet></router-outlet>
 
-<app-login></app-login>
+@if(this.api.isAdmin()){
+    <h1>Hello I am admin</h1>
+}@else {
+    <h1>Unauthorized user</h1>
+}
+

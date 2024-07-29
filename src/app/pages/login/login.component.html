@@ -15,8 +15,8 @@
     <button type="submit" class="btn btn-primary" (click)="GoToLogin()">Login</button>
 </form> -->
 
-<!-- app.component.html -->
-<div class="grand">
+<!-- template driven form-->
+<!-- <div class="grand">
   <div class="parent container">
      <form #LoginForm="ngForm" (ngSubmit)="onSubmit(LoginForm)">
       <div class="mb-3">
@@ -27,7 +27,6 @@
           id="exampleInputEmail"
           aria-describedby="emailHelp"
           name="email"
-          for storing as key value pairs or in JSON format
           ngModel
           required
         >
@@ -47,6 +46,42 @@
         >
       </div>
       <button [disabled]="LoginForm.invalid" type="submit" class="btn btn-primary">Login</button>
+     </form>
+  </div>
+</div> -->
+
+<!-- Reactive forms -->
+<div class="grand">
+  <div class="parent container">
+ 
+     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="mb-3">
+        <label for="exampleInputEmail" class="form-label">Email Address</label>
+        <input
+          type="email"
+          class="form-control"
+          id="exampleInputEmail"
+          aria-describedby="emailHelp"
+          formControlName="email"
+        >
+      </div>
+
+      <div *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched" >
+        <div *ngIf="loginForm.get('email')?.errors?.['required']">Email is required.</div>
+        <div *ngIf="loginForm.get('email')?.errors?.['email']">Invalid email format.</div>
+      </div>
+
+      <div class="mb-3">
+        <label for="exampleInputPassword" class="form-label">Password</label>
+        <input
+          type="password"
+          class="form-control"
+          id="exampleInputPassword"
+          aria-describedby="emailHelp"
+          formControlName="password"
+        >
+      </div>
+      <button [disabled]="loginForm.invalid" type="submit" class="btn btn-primary">Login</button>
      </form>
   </div>
 </div>
